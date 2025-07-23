@@ -1,0 +1,236 @@
+/* === Scroll suave para toda la página === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Animaciones === */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+@keyframes pulse-shadow {
+  0%, 100% { box-shadow: 0 0 0 rgba(0, 0, 0, 0); }
+  50% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.3); }
+}
+.pulse {
+  animation: pulse-shadow 2s infinite;
+}
+
+@keyframes wave-fade {
+  0% { transform: scale(0.95); opacity: 0; }
+  50% { transform: scale(1.02); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.wave {
+  animation: wave-fade 1.2s ease-out forwards;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Fondo gradiente de header === */
+header {
+  background-image: linear-gradient(120deg, #1e3a8a, #4f46e5);
+  position: relative;
+  overflow: hidden;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+.dark header {
+  background-image: linear-gradient(120deg, #4338ca, #6d28d9);
+}
+header::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 80%);
+  pointer-events: none;
+}
+
+/* === Fondo animado para modo oscuro === */
+.dark body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background-size: 400% 400%;
+  animation: bgShift 12s ease infinite;
+}
+
+/* === Foto de perfil === */
+.foto-perfil {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: auto;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 0 25px rgba(0,0,0,0.15);
+}
+.foto-perfil:hover {
+  transform: scale(1.08) rotate(-1deg);
+  box-shadow: 0 0 35px rgba(59, 130, 246, 0.5);
+}
+
+/* === Botones === */
+button, a.button, .btn {
+  transition: all 0.35s ease-in-out;
+  transform: perspective(1px) translateZ(0);
+}
+button:hover, a.button:hover, .btn:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* === Títulos === */
+h2 {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  padding-bottom: 0.5rem;
+}
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #3b82f6;
+  margin-top: 8px;
+  border-radius: 3px;
+}
+.dark h2::after {
+  background-color: #93c5fd;
+}
+h2::before {
+  content: '';
+  display: inline-block;
+  margin-right: 8px;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+h2:hover::before {
+  transform: rotate(5deg);
+}
+
+/* === Secciones === */
+section {
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.dark section {
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* === Galería de proyectos === */
+.group img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+  filter: brightness(1);
+}
+.group:hover img {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  filter: brightness(1.05);
+}
+.group p {
+  transition: color 0.3s ease;
+}
+.group:hover p {
+  color: #2563eb;
+}
+.dark .group:hover p {
+  color: #93c5fd;
+}
+
+/* === Footer === */
+footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.dark footer {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* === NAV Sticky === */
+nav.sticky {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255,255,255,0.85);
+}
+.dark nav.sticky {
+  background-color: rgba(17,24,39,0.85);
+}
+nav ul li a {
+  transition: color 0.3s ease;
+}
+nav ul li a:hover {
+  color: #1d4ed8;
+}
+.dark nav ul li a:hover {
+  color: #93c5fd;
+}
+
+/* === Enlaces generales === */
+a {
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+.dark a:hover {
+  color: #93c5fd;
+}
+
+/* === Tipografía extra === */
+body {
+  line-height: 1.7;
+}
+p {
+  transition: color 0.3s ease;
+}
+.dark p {
+  color: #d1d5db;
+}
+.dark h1, .dark h2, .dark p {
+  color: #e0e7ff;
+}
+
+/* === Responsive === */
+@media screen and (max-width: 600px) {
+  .foto-perfil {
+    width: 130px;
+    height: 130px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  main {
+    padding: 1rem;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .group img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .group {
+    margin-bottom: 1rem;
+  }
+  .group img {
+    border-radius: 12px;
+  }
+}

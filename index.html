@@ -1,40 +1,78 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Federico Rormoser – DevOps & Cloud Specialist</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Toggle dark mode
-    function toggleDark() {
-      document.documentElement.classList.toggle('dark');
-    }
-  </script>
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1780/1780794.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .animate-fade-in {
+      animation: fade-in 1.5s ease-out;
+    }
+    .foto-perfil {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      margin: auto;
+      transition: transform 0.3s ease;
+    }
+    .foto-perfil:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans">
+
+<body class="animate-fade-in bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-all duration-300 font-sans">
+  <!-- NAV STICKY -->
+  <nav class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md text-center py-4">
+    <ul class="flex justify-center gap-8 text-blue-700 dark:text-blue-300 font-medium">
+      <li><a href="#sobre" class="hover:underline">Sobre mí</a></li>
+      <li><a href="#skills" class="hover:underline">Skills</a></li>
+      <li><a href="#experiencia" class="hover:underline">Experiencia</a></li>
+      <li><a href="#galeria" class="hover:underline">Galería</a></li>
+      <li><a href="#contacto" class="hover:underline">Contacto</a></li>
+    </ul>
+  </nav>
 
   <!-- Header -->
-  <header class="bg-blue-900 dark:bg-blue-800 text-white py-10 text-center shadow-md transition-all duration-300">
-    <h1 class="text-4xl font-bold animate-fade-down">Federico Rormoser</h1>
+  <header class="text-center py-12 bg-gradient-to-r from-blue-900 to-indigo-800 dark:from-indigo-700 dark:to-purple-800 text-white shadow-lg">
+    <img src="assets/foto_perfil.jpg" alt="Foto de Federico" class="foto-perfil mb-4" data-aos="zoom-in" />
+    <h1 class="text-4xl font-bold">Federico Rormoser</h1>
     <p class="text-xl mt-2">DevOps & Cloud Specialist</p>
-    <button onclick="toggleDark()" class="mt-4 px-4 py-2 bg-white text-blue-900 rounded hover:bg-gray-100 transition duration-300">🌓 Cambiar tema</button>
+    <button onclick="document.documentElement.classList.toggle('dark')" class="mt-4 px-4 py-2 bg-white text-blue-900 rounded hover:bg-gray-200 transition">🌓 Cambiar tema</button>
   </header>
 
   <!-- Main Content -->
-  <main class="max-w-6xl mx-auto px-6 py-10 space-y-12">
+  <main class="max-w-5xl mx-auto px-6 py-10 space-y-16">
 
-    <!-- Perfil -->
-    <section>
-      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">📌 Perfil Profesional</h2>
-      <p class="text-lg">Administrador de sistemas especializado en Cloud y Automatización. Me dedico a escalar infraestructuras críticas con herramientas modernas como Docker, Kubernetes, Ansible, y AWS.</p>
+    <section data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">📌 Perfil Profesional</h2>
+      <p class="text-lg leading-relaxed">Administrador de sistemas especializado en Cloud y Automatización. Me dedico a escalar infraestructuras críticas con herramientas modernas como Docker, Kubernetes, Ansible y AWS.</p>
     </section>
 
-    <!-- Skills -->
-    <section>
-      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">🛠️ Skills Técnicos</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-base">
+<section id="sobre" data-aos="fade-up" data-aos-delay="50">
+  <h2 class="text-2xl font-semibold text-blue-700 mb-4">🧍 Sobre mí</h2>
+  <div class="flex flex-col md:flex-row items-center gap-6">
+    <img src="assets/foto_personal.jpg" alt="Foto personal" class="rounded-lg w-64 shadow-md hover:scale-105 transform transition duration-300" />
+    <p class="text-lg leading-relaxed">
+      Soy curioso, resolutivo y fanático de automatizar tareas repetitivas. Me apasiona la tecnología y el trabajo colaborativo. Fuera de lo técnico, disfruto del café, la música y los desafíos que me sacan de la zona de confort.
+    </p>
+  </div>
+</section>
+
+    <section data-aos="fade-up" data-aos-delay="100">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">🛠️ Skills Técnicos</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <ul class="list-disc pl-5 space-y-1">
           <li>Jenkins, Ansible Tower</li>
           <li>Docker, Kubernetes</li>
@@ -53,54 +91,65 @@
       </div>
     </section>
 
-    <!-- Experiencia -->
-    <section>
-      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">💼 Experiencia</h2>
-      <ul class="space-y-4 text-base">
-        <li><strong class="text-blue-700 dark:text-blue-400">TIVIT</strong> – Admin Unix (2024–Presente)<br />Ansible, AWS, Docker, monitoreo con Splunk y CloudWatch.</li>
-        <li><strong class="text-blue-700 dark:text-blue-400">Atos/Stellantis</strong> – Admin Solaris/AIX (2023–2024)<br />Scripts Bash, monitoreo OSP, múltiples BBDD.</li>
-        <li><strong class="text-blue-700 dark:text-blue-400">Hypersys</strong> – Admin Linux (2023)<br />Automatización Python/Bash, virtualización, VPN.</li>
+    <section data-aos="fade-up" data-aos-delay="200">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">💼 Experiencia</h2>
+      <ul class="space-y-4">
+        <li><strong class="text-blue-600">TIVIT</strong> – Admin Unix (2024–Presente)<br />Ansible, AWS, Docker, monitoreo con Splunk y CloudWatch.</li>
+        <li><strong class="text-blue-600">Atos/Stellantis</strong> – Admin Solaris/AIX (2023–2024)<br />Scripts Bash, monitoreo OSP, múltiples BBDD.</li>
+        <li><strong class="text-blue-600">Hypersys</strong> – Admin Linux (2023)<br />Automatización Python/Bash, virtualización, VPN.</li>
       </ul>
     </section>
 
-    <!-- Educación -->
-    <section>
-      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">🎓 Educación</h2>
-      <ul class="list-disc pl-5">
+    <section data-aos="fade-up" data-aos-delay="300">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">🎓 Educación</h2>
+      <ul class="list-disc pl-5 space-y-1">
         <li>Ingeniería en Informática – UADE (en curso)</li>
         <li>Técnico en Electrónica – Otto Krause (2018)</li>
       </ul>
     </section>
 
-    <!-- Idiomas -->
-    <section>
-      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">🌎 Idiomas</h2>
-      <ul class="list-disc pl-5">
+    <section data-aos="fade-up" data-aos-delay="400">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">🌎 Idiomas</h2>
+      <ul class="list-disc pl-5 space-y-1">
         <li>Español nativo 🇦🇷</li>
         <li>Inglés – B2 🇬🇧</li>
         <li>Alemán – B1 🇩🇪</li>
       </ul>
     </section>
 
-    <!-- Proyectos -->
-    <section>
-      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">📁 Proyectos Destacados</h2>
-      <p class="mb-2">Pronto iré agregando algunos de mis proyectos en GitHub relacionados con automatización, infraestructura y DevOps.</p>
-      <ul class="list-disc pl-5 text-base text-blue-600">
-        <li><em>Coming soon</em>: Proyecto con Docker + CI/CD</li>
-        <li><em>Coming soon</em>: Infraestructura como código con Terraform</li>
+    <section data-aos="fade-up" data-aos-delay="500">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">📁 Proyectos Destacados</h2>
+      <ul class="list-disc pl-5 space-y-1">
+        <li><strong class="text-blue-600">Coming soon</strong>: Proyecto con Docker + CI/CD</li>
+        <li><strong class="text-blue-600">Coming soon</strong>: Infraestructura como código con Terraform</li>
       </ul>
     </section>
 
-    <!-- Botón para CV -->
-    <section class="text-center mt-10">
-      <a href="./assets/Federico_Rormoser_Resume_2025.pdf" download class="bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-700 transition duration-300">⬇️ Descargar CV</a>
-    </section>
+    <section id="galeria" data-aos="fade-up" data-aos-delay="950">
+  <h2 class="text-2xl font-semibold text-blue-700 mb-4">🧪 Galería de proyectos</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <a href="https://github.com/frormoser/proyecto-docker" target="_blank" class="group">
+      <img src="assets/proyecto1.png" alt="Docker CI/CD" class="rounded-lg shadow-md group-hover:scale-105 transform transition" />
+      <p class="mt-2 text-blue-700 text-center">Docker + CI/CD</p>
+    </a>
+    <a href="https://github.com/frormoser/infra-terraform" target="_blank" class="group">
+      <img src="assets/proyecto2.png" alt="Terraform Infra" class="rounded-lg shadow-md group-hover:scale-105 transform transition" />
+      <p class="mt-2 text-blue-700 text-center">Terraform IaC</p>
+    </a>
+    <a href="https://github.com/frormoser/proyecto-grafana" target="_blank" class="group">
+      <img src="assets/proyecto3.png" alt="Grafana Monitoreo" class="rounded-lg shadow-md group-hover:scale-105 transform transition" />
+      <p class="mt-2 text-blue-700 text-center">Dashboard con Grafana</p>
+    </a>
+  </div>
+</section>
 
-    <!-- Contacto -->
-    <section>
-      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">📫 Contacto</h2>
-      <p>
+    <div class="text-center" data-aos="zoom-in" data-aos-delay="600">
+      <a href="assets/Federico_Rormoser_Resume_2025.pdf" download class="inline-block mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 hover:scale-105 transform transition duration-300">⬇️ Descargar CV</a>
+    </div>
+
+    <section data-aos="fade-up" data-aos-delay="700">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">📫 Contacto</h2>
+      <p class="space-y-1">
         📱 <a href="tel:+5491160522525" class="text-blue-600 hover:underline">+54 9 11 6052-2525</a><br />
         📧 <a href="mailto:joelrormoser@gmail.com" class="text-blue-600 hover:underline">joelrormoser@gmail.com</a><br />
         🔗 <a href="https://linkedin.com/in/federico-rormoser" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a>
@@ -108,9 +157,10 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="bg-gray-200 dark:bg-gray-800 text-center py-6 text-sm text-gray-600 dark:text-gray-400">
     &copy; 2025 Federico Rormoser. Hecho con ❤️ y Tailwind CSS.
   </footer>
+
+  <script>AOS.init();</script>
 </body>
 </html>
