@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Federico Rormoser – DevOps & Cloud Specialist</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Toggle dark mode
+    function toggleDark() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1780/1780794.png" />
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans">
+
+  <!-- Header -->
+  <header class="bg-blue-900 dark:bg-blue-800 text-white py-10 text-center shadow-md transition-all duration-300">
+    <h1 class="text-4xl font-bold animate-fade-down">Federico Rormoser</h1>
+    <p class="text-xl mt-2">DevOps & Cloud Specialist</p>
+    <button onclick="toggleDark()" class="mt-4 px-4 py-2 bg-white text-blue-900 rounded hover:bg-gray-100 transition duration-300">🌓 Cambiar tema</button>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-10 space-y-12">
+
+    <!-- Perfil -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">📌 Perfil Profesional</h2>
+      <p class="text-lg">Administrador de sistemas especializado en Cloud y Automatización. Me dedico a escalar infraestructuras críticas con herramientas modernas como Docker, Kubernetes, Ansible, y AWS.</p>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">🛠️ Skills Técnicos</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-base">
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Jenkins, Ansible Tower</li>
+          <li>Docker, Kubernetes</li>
+          <li>Git / GitHub</li>
+        </ul>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>AWS (EC2, IAM, S3, CloudWatch)</li>
+          <li>Red Hat Satellite</li>
+          <li>Bash, Python, Java</li>
+        </ul>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>VMware, Oracle VM, RHVM</li>
+          <li>Nagios, Grafana, Splunk</li>
+          <li>Apache, Tomcat, WebSphere</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Experiencia -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">💼 Experiencia</h2>
+      <ul class="space-y-4 text-base">
+        <li><strong class="text-blue-700 dark:text-blue-400">TIVIT</strong> – Admin Unix (2024–Presente)<br />Ansible, AWS, Docker, monitoreo con Splunk y CloudWatch.</li>
+        <li><strong class="text-blue-700 dark:text-blue-400">Atos/Stellantis</strong> – Admin Solaris/AIX (2023–2024)<br />Scripts Bash, monitoreo OSP, múltiples BBDD.</li>
+        <li><strong class="text-blue-700 dark:text-blue-400">Hypersys</strong> – Admin Linux (2023)<br />Automatización Python/Bash, virtualización, VPN.</li>
+      </ul>
+    </section>
+
+    <!-- Educación -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">🎓 Educación</h2>
+      <ul class="list-disc pl-5">
+        <li>Ingeniería en Informática – UADE (en curso)</li>
+        <li>Técnico en Electrónica – Otto Krause (2018)</li>
+      </ul>
+    </section>
+
+    <!-- Idiomas -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">🌎 Idiomas</h2>
+      <ul class="list-disc pl-5">
+        <li>Español nativo 🇦🇷</li>
+        <li>Inglés – B2 🇬🇧</li>
+        <li>Alemán – B1 🇩🇪</li>
+      </ul>
+    </section>
+
+    <!-- Proyectos -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">📁 Proyectos Destacados</h2>
+      <p class="mb-2">Pronto iré agregando algunos de mis proyectos en GitHub relacionados con automatización, infraestructura y DevOps.</p>
+      <ul class="list-disc pl-5 text-base text-blue-600">
+        <li><em>Coming soon</em>: Proyecto con Docker + CI/CD</li>
+        <li><em>Coming soon</em>: Infraestructura como código con Terraform</li>
+      </ul>
+    </section>
+
+    <!-- Botón para CV -->
+    <section class="text-center mt-10">
+      <a href="./assets/Federico_Rormoser_Resume_2025.pdf" download class="bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-700 transition duration-300">⬇️ Descargar CV</a>
+    </section>
+
+    <!-- Contacto -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-800 dark:text-blue-300 mb-4">📫 Contacto</h2>
+      <p>
+        📱 <a href="tel:+5491160522525" class="text-blue-600 hover:underline">+54 9 11 6052-2525</a><br />
+        📧 <a href="mailto:joelrormoser@gmail.com" class="text-blue-600 hover:underline">joelrormoser@gmail.com</a><br />
+        🔗 <a href="https://linkedin.com/in/federico-rormoser" target="_blank" class="text-blue-600 hover:underline">LinkedIn</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 dark:bg-gray-800 text-center py-6 text-sm text-gray-600 dark:text-gray-400">
+    &copy; 2025 Federico Rormoser. Hecho con ❤️ y Tailwind CSS.
+  </footer>
+</body>
+</html>
